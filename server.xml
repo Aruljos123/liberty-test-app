@@ -15,5 +15,5 @@
 
     <applicationMonitor updateTrigger="mbean"/>
 
-    <webApplication id="liberty-test-app" location="liberty-test-app.war" name="liberty-test-app"/>
+    <webApplication id="liberty-test-app" location="liberty-test-app.war" contextRoot="liberty-test-app"/>
 </server>
