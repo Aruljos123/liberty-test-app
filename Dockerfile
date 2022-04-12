@@ -17,3 +17,7 @@ ARG REVISION=SNAPSHOT
 
 COPY --from=build --chown=1001:0 /target/liberty-test-app.war /config/apps/
 COPY --chown=1001:0 server.xml /config/
+
+EXPOSE 9080
+
+LABEL io.openshift.expose-services 9080/http
