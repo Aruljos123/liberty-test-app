@@ -15,5 +15,5 @@ FROM icr.io/appcafe/open-liberty:22.0.0.1-full-java8-openj9-ubi
 ARG VERSION=1.0
 ARG REVISION=SNAPSHOT
 
-COPY --from=build --chown=1001:0 /target/liberty-test-app-0.0.1-SNAPSHOT.war /config/apps/
+COPY --from=build --chown=1001:0 /target/liberty-test-app.war /config/apps/
 COPY --chown=1001:0 server.xml /config/
