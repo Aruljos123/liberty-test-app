@@ -23,3 +23,4 @@ COPY --chown=1001:0 server.xml /config/
 EXPOSE 9080 9443
 
 LABEL io.openshift.expose-services 9080/http
+LABEL io.openshift.expose-services 9443/https
