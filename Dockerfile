@@ -20,7 +20,8 @@ ARG REVISION=SNAPSHOT
 COPY --from=build --chown=1001:0 /target/liberty-test-app.war /config/apps/
 COPY --chown=1001:0 server.xml /config/
 
-EXPOSE 9080 9443
+#EXPOSE 9080 9443
+EXPOSE 9443
 
-LABEL io.openshift.expose-services 9080/http
+#LABEL io.openshift.expose-services 9080/http
 LABEL io.openshift.expose-services 9443/https
