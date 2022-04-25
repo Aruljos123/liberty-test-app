@@ -1,0 +1,14 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    app: liberty-test-app
+  name: liberty-test-app
+  namespace: liberty-test-app
+spec:
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: liberty-test-app
+    weight: 100
