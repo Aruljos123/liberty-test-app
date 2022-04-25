@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: liberty-example-app
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: liberty-example
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: apps/liberty-example/overlays/liberty-example
+    repoURL: https://github.com/Aruljos123/liberty-test-app.git
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: false
+    syncOptions:
+    - CreateNamespace=true
+	
