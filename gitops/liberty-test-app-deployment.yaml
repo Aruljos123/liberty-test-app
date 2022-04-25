@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: liberty-test-app
+  name: liberty-test-app
+  namespace: liberty-test-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: liberty-test-app
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: liberty-test-app
+    spec:
+      containers:
+      - image: icr.io/appcafe/open-liberty-devfile-stack:21.0.0.12
+        name: liberty-test-app
+        env:
+        - name: TEST_ENV
+          value: "Loading from Env Variable"
+        resources: {}
